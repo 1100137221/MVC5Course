@@ -35,7 +35,11 @@ namespace MVC5Course.Models
         public string LastName { get; set; }
         [RegularExpression("[MF]")]
         public string Gender { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString ="{0:yyyy/MM/dd}",ApplyFormatInEditMode =true)]
         public Nullable<System.DateTime> DateOfBirth { get; set; }
+        [Display(Name ="信用評等")]
+        [Range(0,9,ErrorMessage ="{0}介於{1}到{2}")] 
         public Nullable<double> CreditRating { get; set; }
         public string XCode { get; set; }
         public Nullable<int> OccupationId { get; set; }

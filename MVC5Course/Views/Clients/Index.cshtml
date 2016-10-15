@@ -5,7 +5,10 @@
 }
 
 <h2>Index</h2>
-
+<form action="">
+    <input type="text" name="search" />
+    <input type="submit" value="search" />
+</form>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -61,3 +64,6 @@
 }
 
 </table>
+
+
+@Html.Action("Create")
