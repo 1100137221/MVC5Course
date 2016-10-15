@@ -26,5 +26,15 @@ namespace MVC5Course.Controllers
 
             return View();
         }
+
+        //MVC4+TAB 快速鍵
+        public ActionResult Test()
+        {
+
+            return View();
+        }
+        
+
+        
     }
 }
