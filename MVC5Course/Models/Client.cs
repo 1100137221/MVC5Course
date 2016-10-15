@@ -11,7 +11,7 @@ namespace MVC5Course.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class Client
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,9 +21,16 @@ namespace MVC5Course.Models
         }
     
         public int ClientId { get; set; }
+        [Required]
+        [StringLength(10,ErrorMessage ="超過10個長度")]
         public string FirstName { get; set; }
+        [Required]
+        [StringLength(10)]
         public string MiddleName { get; set; }
+        [Required]
+        [StringLength(10)]
         public string LastName { get; set; }
+        [RegularExpression("{MF}")]
         public string Gender { get; set; }
         public Nullable<System.DateTime> DateOfBirth { get; set; }
         public Nullable<double> CreditRating { get; set; }
