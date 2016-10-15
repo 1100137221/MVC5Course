@@ -21,16 +21,19 @@ namespace MVC5Course.Models
         }
     
         public int ClientId { get; set; }
+
+
         [Required]
-        [StringLength(10,ErrorMessage ="超過10個長度")]
+        [Display(Name ="性")]
+        [StringLength(10,ErrorMessage ="{0}超過{1}個長度")]
         public string FirstName { get; set; }
         [Required]
-        [StringLength(10)]
+        [StringLength(10, ErrorMessage = "{0}超過{1}個長度")]
         public string MiddleName { get; set; }
         [Required]
-        [StringLength(10)]
+        [StringLength(10, ErrorMessage = "{0}超過{1}個長度")]
         public string LastName { get; set; }
-        [RegularExpression("{MF}")]
+        [RegularExpression("[MF]")]
         public string Gender { get; set; }
         public Nullable<System.DateTime> DateOfBirth { get; set; }
         public Nullable<double> CreditRating { get; set; }
