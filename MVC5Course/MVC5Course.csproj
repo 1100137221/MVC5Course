@@ -216,6 +216,9 @@
       <DependentUpon>Fabrics.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewModels\ClientViewModel.cs" />
+    <Compile Include="Models\vw_ClientContribution.cs">
+      <DependentUpon>Fabrics.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Views\Home\Test1Controller.cs" />
@@ -309,6 +312,8 @@
     <Content Include="Views\Clients\LoginResult.cshtml" />
     <Content Include="Views\EF\Index.cshtml" />
     <Content Include="Views\EF\Details.cshtml" />
+    <Content Include="Views\EF\clientContribute.cshtml" />
+    <Content Include="Views\EF\getclientContribute.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
