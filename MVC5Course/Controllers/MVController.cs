@@ -1,6 +1,7 @@
 ﻿using MVC5Course.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 namespace MVC5Course.Controllers
 {
     [localDebugOnly]
+    [HandleError(ExceptionType = typeof(DbEntityValidationException),View = "Error_DbEntityValidationException")]
     public class MVController : BaseController
     {
         [shareData]
@@ -42,6 +44,11 @@ namespace MVC5Course.Controllers
             return RedirectToAction("ProductList");
         }
 
+        public ActionResult MyError()
+        {
+            throw new InvalidOperationException("ERROR");
+            return View();
+        }
 
 
     }

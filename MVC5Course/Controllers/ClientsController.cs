@@ -24,6 +24,11 @@ namespace MVC5Course.Controllers
                 client = client.Where(p => p.FirstName.Contains(search));
             }
             client = client.OrderByDescending(p => p.ClientId).Take(10);
+
+            var options = (from p in db.Client select p.CreditRating).Distinct().OrderBy(p => p).ToList();
+            ViewBag.CreditRating = new SelectList(options);
+            ViewBag.Gender = new SelectList(new string[] { "M", "F" });
+
             return View(client);
         }
 

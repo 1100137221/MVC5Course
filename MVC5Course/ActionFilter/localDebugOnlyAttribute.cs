@@ -7,7 +7,7 @@ namespace MVC5Course.Controllers
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            if (filterContext.HttpContext.Request.IsLocal)
+            if (!filterContext.HttpContext.Request.IsLocal)
             {
                 filterContext.Result = new RedirectResult("/");
             }
